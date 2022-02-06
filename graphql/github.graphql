@@ -1,0 +1,55 @@
+{
+  repositoryOwner(login: "SketchNI") {
+    repositories(first: 100, privacy: PUBLIC) {
+      totalCount
+      pageInfo {
+        startCursor
+        hasNextPage
+        hasPreviousPage
+        endCursor
+      }
+      edges {
+        node {
+          name
+          nameWithOwner
+          releases(last: 100) {
+            totalCount
+            edges {
+              node {
+                name
+                author {
+                  avatarUrl
+                  name
+                }
+                isDraft
+                isLatest
+                isPrerelease
+                url
+              }
+            }
+          }
+          isPrivate
+          isArchived
+          description
+          isFork
+          forkCount
+          stargazerCount
+          url
+          hasIssuesEnabled
+          hasProjectsEnabled
+          projectsUrl
+          homepageUrl
+          issues {
+            totalCount
+          }
+          pullRequests {
+            totalCount
+          }
+          forks {
+            totalCount
+          }
+        }
+      }
+    }
+  }
+}

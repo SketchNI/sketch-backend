@@ -1,0 +1,25 @@
+{
+    "name": "Contentful",
+    "schemaPath": "schema.graphql",
+    "extensions": {
+        "endpoints": {
+            "Contentful": {
+                "url": "https://graphql.contentful.com/content/v1/spaces/",
+                "headers": {
+                    "authorization": "Bearer ",
+                    "user-agent": "JS GraphQL"
+                },
+                "introspect": true
+            },
+            "GitHub": {
+                "url": "https://api.github.com/graphql",
+                "headers": {
+                    "authorization": "Bearer ",
+                    "user-agent": "JS GraphQL"
+                },
+                "introspect": true
+            }
+        }
+    }
+
+}

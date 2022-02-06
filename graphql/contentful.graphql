@@ -1,0 +1,41 @@
+query {
+  categoryCollection(limit: 25) {
+    items {
+      sys {
+        id
+      }
+      category
+    }
+  }
+  blogPostCollection(limit: 10) {
+    items {
+      title
+      slug
+      categoryCollection(limit: 25) {
+        items {
+          sys {
+            id
+          }
+          category
+        }
+      }
+      sys {
+        id
+        publishedAt
+      }
+      content {
+        json
+        links {
+          assets {
+            hyperlink {
+              url
+              height
+              width
+              description
+            }
+          }
+        }
+      }
+    }
+  }
+}
