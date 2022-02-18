@@ -34,9 +34,9 @@ module.exports = {
                     css: {
                         color: colors.zinc["50"],
                         a: {
-                            color: colors.sky["300"],
+                            color: '#47a3ff',
                             '&:hover': {
-                                color: colors.sky["500"]
+                                color: '#3399ff'
                             }
                         },
                         strong: {
@@ -51,5 +51,5 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('@tailwindcss/line-clamp')],
 };
