@@ -7,7 +7,7 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production && mix --production --mix-config=webpack.ssr.mix.js",
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.11.0",
@@ -31,15 +31,18 @@
         "@headlessui/vue": "^1.4.3",
         "@heroicons/vue": "^1.0.5",
         "@highlightjs/vue-plugin": "github:highlightjs/vue-plugin",
+        "@inertiajs/server": "^0.1.0",
         "@kangc/v-md-editor": "^2.3.13",
         "@pathscale/vue3-svg-icons": "^0.0.11",
         "@tailwindcss/line-clamp": "^0.3.1",
+        "@vue/server-renderer": "^3.2.31",
         "@vueup/vue-quill": "^1.0.0-beta.7",
         "autoprefixer": "^10.4.2",
         "contentful": "^9.1.6",
         "highlight.js": "^11.4.0",
         "moment": "^2.29.1",
         "tippy.js": "^6.3.7",
+        "webpack-node-externals": "^3.0.0",
         "ziggy": "^2.4.0"
     }
 }

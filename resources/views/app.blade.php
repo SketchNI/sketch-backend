@@ -19,6 +19,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     @routes
+    @inertiaHead
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans antialiased h-full">
