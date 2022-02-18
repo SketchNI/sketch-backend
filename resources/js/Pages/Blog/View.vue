@@ -9,6 +9,7 @@
             <meta property="og:description" :content="post.summary"/>
             <meta property="og:locale" content="en_GB"/>
             <meta property="og:published_time" :content="post.published_at"/>
+            <meta property="og:title" :content="post.title"/>
             <meta property="twitter:card" content="summary"/>
             <meta property="twitter:title" :content="post.title"/>
             <meta property="twitter:description" :content="post.summary"/>
