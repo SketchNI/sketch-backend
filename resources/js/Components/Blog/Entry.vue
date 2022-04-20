@@ -10,8 +10,8 @@
 
         <div class="meta mb-1">
             <p class="author">By <span class="text-white">{{ post.user.username }}</span></p>
-            <p class="topic">Topic: <span class="chip">{{ post.topic[0].name }}</span></p>
-            <p class="tags">
+            <p class="topic" v-if="post.topic.length === 1">Topic: <span class="chip">{{ post.topic[0].name }}</span></p>
+            <p class="tags" v-if="post.tags.length > 0">
                 Tags:
                 <span v-for="(tag, i) in post.tags">
                     <span class="chip">{{ tag.name }}</span><span

@@ -18,7 +18,12 @@ class BlogController extends Controller
     public function index()
     {
         if (!cache()->has('blog_posts')) {
-            $posts = (new Post)->with(['tags', 'user', 'topic'])->published()->get();
+            $posts = (new Post)->with(['tags', 'user', 'topic'])
+                ->whereNot('id', '41d5f702-eda2-4c9d-b455-e6808309aa08')
+                ->whereNot('id', '4b1640ca-c4cb-4936-8726-bc5713e5cbc3')
+                ->whereNot('id', 'df51111a-c830-463d-a5cd-6b5a6d9a7a72')
+                ->published()
+                ->get();
             cache()->put('blog_posts', $posts, Carbon::now()->addMinute());
         }
 
