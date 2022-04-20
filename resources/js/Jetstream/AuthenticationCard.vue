@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col rounded-lg -m-4 sm:justify-center items-center pt-6 sm:pt-0 bg-gray-800">
+    <div class="flex flex-col rounded-lg sm:justify-center items-center pt-6 sm:pt-0 bg-zinc-800 h-screen">
         <div class="mt-8">
             <slot name="logo" />
         </div>

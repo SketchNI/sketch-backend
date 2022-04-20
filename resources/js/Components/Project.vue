@@ -65,10 +65,6 @@ export default {
             }
         }
     },
-
-    created() {
-        console.log(this.project);
-    }
 }
 </script>
 

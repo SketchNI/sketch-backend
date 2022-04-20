@@ -47,10 +47,10 @@
             </button>
         </div>
         <div class="ml-4 flex items-center md:ml-6" v-else>
-            <x-link :href="route('login')" dusk="login-link"
+            <a :href="route('canvas.login')" dusk="login-link"
                     class="inactive px-3 py-2 rounded-md text-sm font-medium">
                 Sign In
-            </x-link>
+            </a>
         </div>
     </div>
 </template>
@@ -75,6 +75,12 @@ export default defineComponent({
             DisclosurePanel,
             DisclosureButton
         }
+    },
+
+    methods: {
+        logout() {
+            this.$inertia.get(route('canvas.logout'));
+        },
     }
 })
 </script>

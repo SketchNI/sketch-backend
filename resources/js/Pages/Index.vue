@@ -51,10 +51,10 @@
                     <p class="list" v-html="pagelets.pc"/>
                 </div>
 
-                <div v-if="pagelets.show.gaming" class="pagelet">
+<!--                <div v-if="pagelets.show.gaming" class="pagelet">
                     <h2 class="text-lg font-semibold">Gaming Info:</h2>
                     <p class="list" v-html="pagelets.gaming"/>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
@@ -91,8 +91,8 @@ export default defineComponent({
     },
 
     created() {
-        window.axios.get(`/api/pages/14`).then(res => {
-            this.pagelets.about = res.data.content.rendered;
+        window.axios.get(this.route('api.page.show', { id: '4b1640ca-c4cb-4936-8726-bc5713e5cbc3' })).then(res => {
+            this.pagelets.about = res.data.body;
             this.pagelets.show.about = true;
         }).catch(e => {
             if ( e.hasOwnProperty('response') ) {
@@ -102,8 +102,8 @@ export default defineComponent({
             }
         });
 
-        window.axios.get(`/api/pages/26`).then(res => {
-            this.pagelets.pc = res.data.content.rendered;
+        window.axios.get(this.route('api.page.show', { id: '41d5f702-eda2-4c9d-b455-e6808309aa08' })).then(res => {
+            this.pagelets.pc = res.data.body;
             this.pagelets.show.pc = true;
         }).catch(e => {
             if ( e.hasOwnProperty('response') ) {
@@ -113,8 +113,8 @@ export default defineComponent({
             }
         });
 
-        window.axios.get(`/api/pages/19`).then(res => {
-            this.pagelets.programming = res.data.content.rendered;
+        window.axios.get(this.route('api.page.show', { id: 'df51111a-c830-463d-a5cd-6b5a6d9a7a72' })).then(res => {
+            this.pagelets.programming = res.data.body;
             this.pagelets.show.programming = true;
         }).catch(e => {
             if ( e.hasOwnProperty('response') ) {
@@ -124,7 +124,7 @@ export default defineComponent({
             }
         });
 
-        window.axios.get(`/api/pages/23`).then(res => {
+        /*window.axios.get(`/api/pages/23`).then(res => {
             this.pagelets.gaming = res.data.content.rendered;
             this.pagelets.show.gaming = true;
         }).catch(e => {
@@ -133,7 +133,7 @@ export default defineComponent({
             } else {
                 this.errors = e;
             }
-        });
+        });*/
     },
 })
 </script>

@@ -29,7 +29,7 @@ class HandleInertiaRequests extends Middleware
             'global' => [
                 'assets' => [
                     'favicon' => [
-                        'chrome-192' => Storage::temporaryUrl('icon.png', now()->addMinutes(60)),
+                        'chrome-192' => 'android-chrome-192x192.png',
                     ]
                 ],
                 'environment' => app()->environment()
