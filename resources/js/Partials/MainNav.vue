@@ -5,10 +5,9 @@
                     :class="route().current('index') ? 'active' : 'inactive'"
                     :aria-current="route().current('index') ? 'page' : undefined">Home
             </x-link>
-            <x-link :href="route('blog')" dusk="blog-link"
-                    :class="route().current('blog') ? 'active' : 'inactive'"
-                    :aria-current="route().current('blog') ? 'page' : undefined">Blog
-            </x-link>
+            <a href="https://blog.sketchni.uk" dusk="blog-link"
+                    class="inactive" aria-current="false">Blog
+            </a>
             <x-link :href="route('projects')" dusk="projects-link"
                     :class="route().current('projects') ? 'active' : 'inactive'"
                     :aria-current="route().current('projects') ? 'page' : undefined">Projects
@@ -32,9 +31,8 @@
     </div>
     <div class="hidden md:block">
         <div class="ml-4 flex items-center md:ml-6" v-if="$page.props.user !== null">
-            <a :href="route('canvas')" class="inactive m-link" dusk="canvas-link">Canvas</a>
             <a href="/horizon" class="inactive m-link`">Horizon</a>
-            <a :href="`/canvas/users/${$page.props.user.id}/edit`"
+            <a :href="route('profile.show')"
                class="inactive m-link`">Settings</a>
             <x-link :href="route('api-tokens.index')"
                     class="inactive m-link">
@@ -47,7 +45,7 @@
             </button>
         </div>
         <div class="ml-4 flex items-center md:ml-6" v-else>
-            <a :href="route('canvas.login')" dusk="login-link"
+            <a :href="route('login')" dusk="login-link"
                     class="inactive px-3 py-2 rounded-md text-sm font-medium">
                 Sign In
             </a>
@@ -79,7 +77,7 @@ export default defineComponent({
 
     methods: {
         logout() {
-            this.$inertia.get(route('canvas.logout'));
+            this.$inertia.post(route('logout'));
         },
     }
 })

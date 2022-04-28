@@ -6,7 +6,6 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "austintoddj/canvas": "^6.0",
         "contentful/contentful": "^6.4",
         "fruitcake/laravel-cors": "^v2.2.0",
         "guzzlehttp/guzzle": "^7.4.2",

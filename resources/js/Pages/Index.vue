@@ -3,64 +3,86 @@
         <title>About Me</title>
     </x-head>
 
-    <div v-if="errors === null">
-        <div class="grid grid-cols-5 space-x-4">
-            <div class="col-span-3">
-                <article v-if="pagelets.show.about" class="prose lg:prose-xl" v-html="pagelets.about"/>
-                <div v-if="!pagelets.show.about" class="prose lg:prose-xl">
-                    <p class="text-left font-flow leading-5 text-3xl opacity-50">
-                        Ut consequat, lacus vel lacinia semper, libero sem porttitor arcu, feugiat maximus enim erat eu
-                        velit. Morbi semper risus sapien, ornare rutrum libero pellentesque nec. Ut a massa non mauris
-                        congue interdum. Morbi pellentesque suscipit nisl a cursus. Nulla facilisi. Pellentesque scelerisque
-                        maximus turpis eget malesuada. Vestibulum posuere velit a lorem ullamcorper, quis commodo felis
-                        maximus. Donec eu ultricies purus, ac auctor metus. Fusce id rhoncus nunc, a malesuada mi. Praesent
-                        mattis consequat pellentesque. Maecenas congue ipsum non euismod hendrerit. Morbi sed mattis eros.
-                        Mauris pretium enim sed risus vehicula tincidunt.
+    <div class="grid grid-cols-5 space-x-4">
+        <div class="col-span-3">
+            <article class="prose lg:prose-xl prose-blue">
+                <p>Hi, I'm Denver. I'm a programmer, gamer and musician from Northern Ireland.</p>
+
+                <p>I first got interested in computers when I was around 10 or 11. By the time I was 15 I was
+                    experimenting with C# and had even built a very basic web browser.</p>
+                <p>At that time I had no interest in building desktop applications and started to focus on making
+                    websites using Microsoft Frontpage 2003. After a while, I decided that I didn't want to drag and
+                    drop, I wanted to write the fancy symbols that Frontpage generated.</p>
+                <p>I sort of got decent at this and decided to try adding CSS to the mix. That's still a beast I'm not
+                    comfortable with. It would be a couple of years before I got interested in learning PHP. When I was
+                    17, that time arrived! I started to work with PHP and built several working websites using all 3
+                    technologies I had learned. They were awful. The PHP I had written was the kind that got PHP its bad
+                    reputation. The HTML and CSS was horrid but I was proud at the time to have created something.</p>
+
+                <p>
+                    My main goal is to create applications that people find useful and I try to work on every idea I
+                    have to try and achieve that goal.
+                </p>
+            </article>
+        </div>
+        <div class="col-span-2">
+            <div class="text-zinc-400">
+                &lt;!--<br/>
+                Recent Blog Post<br/>
+                --&gt;
+            </div>
+
+            <div class="h-px my-6 bg-zinc-600"/>
+
+            <div class="pagelet">
+                <h2 class="text-lg font-semibold">Programming Info:</h2>
+                <div class="list">
+                    <p><span class="font-bold">LANGUAGES</span>: PHP, Javascript, TypeScript</p>
+                    <p><span class="font-bold">IDE/EDITORS</span>: PhpStorm, Webstorm</p>
+                    <p><span class="font-bold">OPERATING SYSTEMS</span>:</p>
+                    <p class="ml-6">
+                        Windows 11 Pro<br />
+                        Mac OSX<br />
                     </p>
-                    <p class="text-left font-flow leading-5 text-3xl opacity-50">
-                        Nam aliquam vulputate sapien, vel aliquam dolor facilisis eu. Duis neque turpis, volutpat ornare
-                        maximus sed, bibendum luctus massa. Sed vulputate velit turpis, scelerisque posuere nulla auctor
-                        non. Fusce at urna sodales, fermentum magna ac, laoreet urna. Donec placerat sapien vel magna
-                        sodales suscipit. Vivamus neque lacus, hendrerit vel cursus nec, fringilla non odio. In ac nunc in
-                        massa volutpat pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <p class="text-left font-flow leading-5 text-3xl opacity-50">
-                        Integer porttitor velit et faucibus dignissim. Maecenas vulputate id quam at aliquet. Nullam a
-                        semper felis. Suspendisse ullamcorper magna dictum elit tincidunt, sed malesuada elit pellentesque.
-                        Vestibulum in gravida massa. Proin vel magna posuere, placerat ligula in, hendrerit dolor. Duis vel
-                        ipsum at sapien imperdiet luctus non sed tortor.
-                    </p>
+                    <p></p>
+                    <p><span class="font-bold">BROWSERS</span>: Firefox, Chrome, Safari</p>
+                    <p><span class="font-bold">OTHER</span>: Docker, Windows Terminal</p>
+
                 </div>
             </div>
-            <div class="col-span-2">
-                <div class="text-zinc-400">
-                    &lt;!--<br />
-                    Recent Blog Post<br />
-                    --&gt;
+
+            <div class="pagelet">
+                <h2 class="text-lg font-extrabold">PC Specs:</h2>
+                <h3 class="text-base font-semibold">Windows 11 Pro</h3>
+                <div class="list">
+                    <p><span class="font-bold">CPU</span>: AMD Ryzen 5 3600 3.6GHz</p>
+                    <p><span class="font-bold">CPU COOLER</span>: Cooler Master MasterLiquid Lite 240</p>
+                    <p><span class="font-bold">RAM</span>: Corsair Vengeance DDR4-3200 RGB - 32GB (4x8GB)</p>
+                    <p><span class="font-bold">GPU</span>: MSI GTX 1660Ti</p>
+                    <p><span class="font-bold">MOTHERBOARD</span>: MSI B450 Tomahawk MAX</p>
+                    <p><span class="font-bold">STORAGE</span>:</p>
+                    <p class="ml-6">
+                        <span class="font-bold">M.2</span>: 1TB NVMe<br />
+                        <span class="font-bold">SSD</span>: 1TB SSD + 2TB
+                    </p>
+                    <p></p>
+                    <p><span class="font-bold">KEYBOARD</span>: SteelSeries Apex 7 (Brown switches)</p>
+                    <p><span class="font-bold">MOUSE</span>: SteelSeries Rival 650</p>
+                    <p><span class="font-bold">HEADSET</span>: Sennheiser EPOS GSP600</p>
+                    <p><span class="font-bold">MONITOR 1</span>: MSI G421</p>
+                    <p><span class="font-bold">MONITOR 2</span>: MSI G421V</p>
+                    <p><span class="font-bold">MONITOR 3</span>: MSI G421V</p>
                 </div>
+                <div class="my-2"></div>
 
-                <div class="h-px my-6 bg-zinc-600"/>
-
-                <div v-if="pagelets.show.programming" class="pagelet">
-                    <h2 class="text-lg font-semibold">Programming Info:</h2>
-                    <p class="list" v-html="pagelets.programming"/>
+                <h3 class="text-base font-semibold">MacOS</h3>
+                <div class="list">
+                    <p><span class="font-bold">MODEL</span>: MacBook Pro 2021</p>
+                    <p><span class="font-bold">SSD</span>: 1TB</p>
+                    <p><span class="font-bold">RAM</span>: 16GB</p>
                 </div>
-
-                <div v-if="pagelets.show.pc" class="pagelet">
-                    <h2 class="text-lg font-semibold">PC Specs:</h2>
-                    <p class="list" v-html="pagelets.pc"/>
-                </div>
-
-<!--                <div v-if="pagelets.show.gaming" class="pagelet">
-                    <h2 class="text-lg font-semibold">Gaming Info:</h2>
-                    <p class="list" v-html="pagelets.gaming"/>
-                </div>-->
             </div>
         </div>
-    </div>
-
-    <div class="bg-red-200 overflow-hidden shadow-xl sm:rounded-lg" v-if="errors !== null">
-        <code v-html="errors" class="mx-4 my-2"></code>
     </div>
 </template>
 
@@ -70,71 +92,6 @@ import AppLayout from '@/Layouts/AppLayout.vue'
 
 export default defineComponent({
     layout: AppLayout,
-
-    data() {
-        return {
-            data: null,
-            errors: null,
-            pagelets: {
-                about: null,
-                programming: null,
-                gaming: null,
-                pc: null,
-                show: {
-                    about: false,
-                    gaming: false,
-                    programming: false,
-                    pc: false,
-                }
-            }
-        }
-    },
-
-    created() {
-        window.axios.get(this.route('api.page.show', { id: '4b1640ca-c4cb-4936-8726-bc5713e5cbc3' })).then(res => {
-            this.pagelets.about = res.data.body;
-            this.pagelets.show.about = true;
-        }).catch(e => {
-            if ( e.hasOwnProperty('response') ) {
-                this.errors = e.response.data.message;
-            } else {
-                this.errors = e;
-            }
-        });
-
-        window.axios.get(this.route('api.page.show', { id: '41d5f702-eda2-4c9d-b455-e6808309aa08' })).then(res => {
-            this.pagelets.pc = res.data.body;
-            this.pagelets.show.pc = true;
-        }).catch(e => {
-            if ( e.hasOwnProperty('response') ) {
-                this.errors = e.response.data.message;
-            } else {
-                this.errors = e;
-            }
-        });
-
-        window.axios.get(this.route('api.page.show', { id: 'df51111a-c830-463d-a5cd-6b5a6d9a7a72' })).then(res => {
-            this.pagelets.programming = res.data.body;
-            this.pagelets.show.programming = true;
-        }).catch(e => {
-            if ( e.hasOwnProperty('response') ) {
-                this.errors = e.response.data.message;
-            } else {
-                this.errors = e;
-            }
-        });
-
-        /*window.axios.get(`/api/pages/23`).then(res => {
-            this.pagelets.gaming = res.data.content.rendered;
-            this.pagelets.show.gaming = true;
-        }).catch(e => {
-            if ( e.hasOwnProperty('response') ) {
-                this.errors = e.response.data.message;
-            } else {
-                this.errors = e;
-            }
-        });*/
-    },
 })
 </script>
 
@@ -145,5 +102,9 @@ article > p {
 
 .pagelet {
     @apply mb-6 text-sm;
+}
+
+.list {
+    @apply leading-normal tracking-wider text-base;
 }
 </style>
