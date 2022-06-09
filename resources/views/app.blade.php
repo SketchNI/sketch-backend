@@ -11,16 +11,17 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#9f00a7">
     <meta name="theme-color" content="#ffffff">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" as="image" href="/images/sketchni.png">
-    <link
+    <meta name="description" content="SketchNI Personal Website" />
+    <link nonce="{{ csp_nonce() }}" rel="preconnect" href="https://fonts.googleapis.com">
+    <link nonce="{{ csp_nonce() }}" rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link nonce="{{ csp_nonce() }}" rel="preconnect" as="image" href="/images/sketchni.png">
+    <link nonce="{{ csp_nonce() }}"
         href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    @routes
+    <link nonce="{{ csp_nonce() }}" rel="stylesheet" href="{{ mix('css/app.css') }}">
+    @routes(null, csp_nonce())
     @inertiaHead
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script nonce="{{ csp_nonce() }}" src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body class="font-sans antialiased h-full">
     @inertia
