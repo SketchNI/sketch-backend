@@ -12,7 +12,7 @@
                     :class="route().current('projects') ? 'active' : 'inactive'"
                     :aria-current="route().current('projects') ? 'page' : undefined">Projects
             </x-link>
-            <x-link :href="route('tools')" dusk="tools-link"
+            <x-link :href="route('tools')" dusk="tools-link" v-if="$page.props.tools_count > 0"
                     :class="route().current('tools') ? 'active' : 'inactive'"
                     :aria-current="route().current('tools') ? 'page' : undefined">Tools
             </x-link>

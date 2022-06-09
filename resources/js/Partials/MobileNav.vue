@@ -10,7 +10,7 @@
                               :class="`${route().current('projects') ? 'm-active' : 'm-inactive'} m-link`"
                               :aria-current="route().current('projects') ? 'page' : undefined">Projects
             </DisclosureButton>
-            <DisclosureButton as="a" :href="route('tools')"
+            <DisclosureButton as="a" :href="route('tools')" v-if="$page.props.tools_count > 0"
                               :class="`${route().current('tools') ? 'm-active' : 'm-inactive'} m-link`"
                               :aria-current="route().current('tools') ? 'page' : undefined">Tools
             </DisclosureButton>

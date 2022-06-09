@@ -29,6 +29,8 @@ export default defineComponent({
         AppLayout,
     },
 
+    props: ['tools'],
+
     data() {
         return {
             data: null,

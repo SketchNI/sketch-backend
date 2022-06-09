@@ -39,7 +39,7 @@
         <footer class="">
             <div class="bg-opacity-50 bg-ukbb-500">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-4">
-                    <div class="flex flex-row items-center justify-between text-white">
+                    <div class="flex flex-col space-y-2 lg:space-y-0 lg:flex-row items-center justify-between text-white">
                         <div>
                             <div class="flex space-x-1.5 justify-between">
                                 <a href="https://discord.gg/theclaw" rel="nofollow,noopener,noreferrer"

@@ -8,7 +8,7 @@
             About Me
         </template>
 
-        <article class="prose lg:prose-2xl prose-blue mb-6">
+        <article class="prose lg:prose-2xl prose-blue px-3 md:px-0 mb-6">
             <p>Hi, I'm Denver. I'm a programmer, gamer and musician from Northern Ireland.</p>
 
             <p>
@@ -30,11 +30,6 @@
                 bad reputation. The HTML and CSS was horrid but I was proud at the time to have created something.
             </p>
         </article>
-
-        <div class="text-zinc-400">
-            <pre>&lt;!-- Recent Blog Post --&gt;</pre>
-        </div>
-
     </app-layout>
 </template>
 

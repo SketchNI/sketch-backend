@@ -32,6 +32,7 @@ class HandleInertiaRequests extends Middleware
                         'chrome-192' => '/android-chrome-192x192.png',
                     ]
                 ],
+                'tools_count' => 0,
                 'environment' => app()->environment()
             ],
         ]);

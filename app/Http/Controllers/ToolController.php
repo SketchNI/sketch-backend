@@ -14,7 +14,7 @@ class ToolController extends Controller
      */
     public function __invoke(): Response
     {
-        return Inertia::render('Tools');
+        return Inertia::render('Tools', ['tools' => 0]);
     }
 
 }

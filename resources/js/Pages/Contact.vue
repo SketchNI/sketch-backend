@@ -4,8 +4,8 @@
             Contact Me
         </template>
 
-        <div class="flex items-start space-x-8">
-            <div class="form w-1/2">
+        <div class="flex flex-col space-y-4 lg:space-y-0 lg:flex-row items-start space-x-8">
+            <div class="form w-full px-4 lg:px-0 lg:w-1/2">
                 <form @submit.prevent="sendMailForm">
                     <div class="input-group">
                         <label for="name" class="label">Name</label>
@@ -46,14 +46,14 @@
                 </form>
             </div>
 
-            <div class="socials w-1/2">
+            <div class="socials hidden lg:block px-4 lg:px-0 lg:w-1/2">
                 <div class="flex items-center">
                     <a href="https://twitter.com/SketchNI" target="_blank" rel="noopener,nofollow"
-                       class="flex w-1/2 items-center space-x-2 hover:no-underline py-4 px-6 hover:bg-zinc-700 rounded-md">
+                       class="flex w-1/2 items-center lg:space-x-2 hover:no-underline py-4 px-6 hover:bg-zinc-700 rounded-md">
                         <img src="/images/twitter.png" class="w-16 rounded-full" alt="Twitter Logo">
                         <div>
-                            <p class="text-xl font-bold text-white">Sketch</p>
-                            <p class="text-base text-zinc-300">@SketchNI</p>
+                            <p class="text-lg lg:text-xl font-bold text-white">Sketch</p>
+                            <p class="text-sm lg:text-base text-zinc-300">@SketchNI</p>
                         </div>
                     </a>
 
@@ -61,8 +61,8 @@
                        class="flex w-1/2 items-center space-x-2 hover:no-underline py-4 px-6 hover:bg-zinc-700 rounded-md">
                         <img src="/images/instagram.png" class="w-16" alt="Instagram Logo">
                         <div>
-                            <p class="text-xl font-bold text-white">Denver Freeburn</p>
-                            <p class="text-base text-zinc-300">sketchniuk</p>
+                            <p class="text-lg lg:text-xl font-bold text-white">Denver Freeburn</p>
+                            <p class="text-sm lg:text-base text-zinc-300">sketchniuk</p>
                         </div>
                     </a>
                 </div>
@@ -70,8 +70,8 @@
                 <div class="flex items-center space-x-2 hover:no-underline py-4 px-6 rounded-md">
                     <img src="/images/discord.png" class="w-16" alt="Discord Logo">
                     <div>
-                        <p class="text-xl font-bold text-white">Sketch</p>
-                        <p class="text-base text-zinc-300">Sketch#1991</p>
+                        <p class="text-lg lg:text-xl font-bold text-white">Sketch</p>
+                        <p class="text-sm lg:text-base text-zinc-300">Sketch#1991</p>
                     </div>
                 </div>
             </div>
