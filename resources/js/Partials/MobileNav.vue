@@ -1,14 +1,11 @@
 <template>
-    <DisclosurePanel class="border-b border-ukbb-700 md:hidden">
+    <DisclosurePanel class="md:hidden">
         <div class="px-2 py-3 space-y-1 sm:px-3">
             <DisclosureButton as="a" :href="route('index')"
                               :class="`${route().current('index') ? 'm-active' : 'm-inactive'} m-link`"
                               :aria-current="route().current('index') ? 'page' : undefined">Home
             </DisclosureButton>
-            <DisclosureButton as="a" :href="route('blog')"
-                              :class="`${route().current('blog') ? 'm-active' : 'm-inactive'} m-link`"
-                              :aria-current="route().current('blog') ? 'page' : undefined">Blog
-            </DisclosureButton>
+            <a href="https://blog.sketchni.uk" class="m-link m-inactive">Blog</a>
             <DisclosureButton as="a" :href="route('projects')"
                               :class="`${route().current('projects') ? 'm-active' : 'm-inactive'} m-link`"
                               :aria-current="route().current('projects') ? 'page' : undefined">Projects
@@ -22,7 +19,7 @@
                               :aria-current="route().current('contact') ? 'page' : undefined">Contact
             </DisclosureButton>
         </div>
-        <div class="pt-4 pb-3 border-t border-ukbb-700">
+        <div class="pt-4 border-t border-ukbb-700">
             <div class="px-2 py-3 space-y-1 sm:px-3" v-if="$page.props.user !== null">
                 <a :href="route('canvas')" class="m-inactive m-link" dusk="canvas-link">Canvas</a>
                 <a href="/horizon" class="m-inactive m-link">
@@ -40,12 +37,6 @@
                         :class="`m-inactive block w-full hover:underline text-left m-link`">
                     Sign Out
                 </button>
-            </div>
-            <div class="px-2 py-3 space-y-1 sm:px-3" v-else>
-                <x-link :href="route('login')"
-                        :class="`${route().current('login') ? 'm-active' : 'm-inactive'} m-link`">
-                    Sign In
-                </x-link>
             </div>
         </div>
     </DisclosurePanel>

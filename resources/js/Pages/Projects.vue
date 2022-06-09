@@ -1,30 +1,35 @@
 <template>
-    <app-layout title="Projects">
+    <app-layout>
+        <x-head>
+            <title>Projects</title>
+        </x-head>
         <template #header>
             Projects
         </template>
 
-        <div v-if="errors === null">
-            <div class="grid grid-cols-3 gap-4">
-                <Project v-for="project in projects" :project="project.node" />
+        <div>
+            <div v-if="errors === null">
+                <div class="grid grid-cols-2 gap-4">
+                    <Project v-for="project in projects" :project="project.node"/>
+                </div>
             </div>
-        </div>
 
-        <div class="bg-red-200 overflow-hidden shadow-xl sm:rounded-lg" v-if="errors !== null">
-            <code v-html="errors" class="mx-4 my-2"></code>
+            <div class="bg-red-200 overflow-hidden shadow-xl sm:rounded-lg" v-else>
+                <code v-html="errors" class="mx-4 my-2"></code>
+            </div>
         </div>
     </app-layout>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
-import AppLayout from '@/Layouts/AppLayout.vue'
 import Project from "@/Components/Project";
+import AppLayout from "@/Layouts/AppLayout";
 
 export default defineComponent({
     components: {
-        Project,
         AppLayout,
+        Project,
     },
 
     data() {
@@ -39,7 +44,7 @@ export default defineComponent({
         window.axios.get(route('api.projects')).then(res => {
             this.projects = res.data.data.repositoryOwner.repositories.edges;
         }).catch(e => {
-            if ( e.hasOwnProperty('response') ) {
+            if (e.hasOwnProperty('response')) {
                 this.errors = e.response.data.message;
             } else {
                 this.errors = e;

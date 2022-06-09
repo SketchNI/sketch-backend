@@ -1,5 +1,9 @@
 <template>
-    <app-layout title="Projects">
+    <app-layout>
+        <x-head>
+            <title>Tools</title>
+        </x-head>
+
         <template #header>
             Tools
         </template>

@@ -1,12 +1,12 @@
 <template>
     <div class="hidden md:block">
-        <div class="flex items-baseline space-x-4">
+        <div class="flex items-center space-x-4">
             <x-link :href="route('index')" dusk="home-link"
                     :class="route().current('index') ? 'active' : 'inactive'"
                     :aria-current="route().current('index') ? 'page' : undefined">Home
             </x-link>
             <a href="https://blog.sketchni.uk" dusk="blog-link"
-                    class="inactive" aria-current="false">Blog
+               class="inactive" aria-current="false">Blog
             </a>
             <x-link :href="route('projects')" dusk="projects-link"
                     :class="route().current('projects') ? 'active' : 'inactive'"
@@ -23,13 +23,6 @@
         </div>
     </div>
     <div class="hidden md:block">
-        <div class="absolute inset-x-auto top-3 h-32 w-32 border-4 rounded-lg border-ukbb-700">
-            <img :src="$page.props.global.assets.favicon['chrome-192']"
-                 alt="SketchNI Chibi-style Avatar by Pandreem."
-                 class="rounded-md bg-white p-[4px] bg-opacity-60"/>
-        </div>
-    </div>
-    <div class="hidden md:block">
         <div class="ml-4 flex items-center md:ml-6" v-if="$page.props.user !== null">
             <a href="/horizon" class="inactive m-link`">Horizon</a>
             <a :href="route('profile.show')"
@@ -43,12 +36,6 @@
                     class="inactive m-link">
                 Sign Out
             </button>
-        </div>
-        <div class="ml-4 flex items-center md:ml-6" v-else>
-            <a :href="route('login')" dusk="login-link"
-                    class="inactive px-3 py-2 rounded-md text-sm font-medium">
-                Sign In
-            </a>
         </div>
     </div>
 </template>

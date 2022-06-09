@@ -1,10 +1,15 @@
 <template>
-    <div class="h-screen flex flex-col justify-between">
+    <div class="">
         <x-head :title="title"/>
-        <div class="bg-ukbb-500 pb-48">
+        <div class="bg-ukbb-500 pb-6">
             <Disclosure as="nav" v-slot="{ open }">
                 <div class="max-w-7xl pt-8 mx-auto sm:px-6 lg:px-8">
-                    <div class="border-t border-b border-ukbb-700">
+                    <div class="mx-4 md:mx-0 h-32 w-32 border-4 rounded-lg border-ukbb-700">
+                        <img :src="$page.props.global.assets.favicon['chrome-192']"
+                             alt="SketchNI Chibi-style Avatar by Pandreem."
+                             class="rounded-md bg-white p-[4px] bg-opacity-60"/>
+                    </div>
+                    <div class="mt-8 border-t border-b border-ukbb-700">
                         <div class="flex py-2 items-center justify-between px-4 sm:px-0">
                             <main-nav/>
                             <div class="-mr-2 flex md:hidden">
@@ -21,21 +26,22 @@
             </Disclosure>
         </div>
 
-        <main class="-mt-24 mb-auto">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 pb-12">
-                <div class="bg-zinc-800 text-white overflow-hidden shadow-xl sm:rounded-lg p-4">
+        <main class="bg-zinc-900">
+            <div class="max-w-7xl mx-auto py-2 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold mt-6 mb-4 pl-2 pb-2 text-white border-b border-ukbb-500"><slot name="header" /></h1>
+
+                <div class="text-white overflow-hidden pb-6">
                     <slot/>
                 </div>
             </div>
         </main>
 
         <footer class="">
-            <div class="bg-ukbb-600">
+            <div class="bg-opacity-50 bg-ukbb-500">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-4">
                     <div class="flex flex-row items-center justify-between text-white">
                         <div>
-                            &copy; Sketch | Denver Freeburn {{ new Date().getFullYear() }} - All Rights Reserved.
-                            <div class="mt-4 flex justify-between">
+                            <div class="flex space-x-1.5 justify-between">
                                 <a href="https://discord.gg/theclaw" rel="nofollow,noopener,noreferrer"
                                    data-tippy-content="Discord">
                                     <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -96,15 +102,8 @@
                         </div>
 
                         <div>
-                            <a href="https://www.digitalocean.com/?refcode=29b2926730a1&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge">
-                                <img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg"
-                                     alt="DigitalOcean Referral Badge"/>
-                            </a>
-                        </div>
-
-                        <div>
                             <div class="flex text-right items-center space-x-1">
-                                <span>Made with Laravel, VueJS and InertiaJS with</span>
+                                <span>&copy; Sketch {{ new Date().getFullYear() }}. All Rights Reserved. With</span>
                                 <div id="heart"></div>
                                 <span>by <span class="font-black">Sketch</span></span>
                             </div>
@@ -220,6 +219,7 @@ export default defineComponent({
 }
 
 svg[role="img"] {
-    @apply w-8 h-8 fill-white;
+    @apply w-10 h-10 p-1 fill-white hover:fill-zinc-300;
+    @apply transition duration-150 ease-in;
 }
 </style>

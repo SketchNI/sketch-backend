@@ -44,8 +44,8 @@ module.exports = {
                         }
                     },
                     prose: {
-
                     }
+
                 },
             }
         },

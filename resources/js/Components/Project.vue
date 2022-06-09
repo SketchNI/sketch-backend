@@ -2,50 +2,40 @@
     <div class="card">
         <div class="p-4">
             <h1 class="text-xl">{{ project.nameWithOwner }}</h1>
-            <div class="h-48 overflow-y-auto" v-if="project.description">
-                <p class="text-base text-zinc-400">{{ project.description }}</p>
+            <div class="pb-4 overflow-y-auto" v-if="project.description">
+                <p class="text-base text-zinc-200">{{ project.description }}</p>
             </div>
-            <p v-else-if="!project.description" class="h-48 no-desc">No description available.</p>
+            <p v-else-if="!project.description" class="pb-4 no-desc">No description available.</p>
 
             <div class="mt-2 flex items-center space-x-4">
-                <a :href="project.url" target="_blank" rel="noopener,nofollow" class="button gh">
-                    <img alt="GitHub Logo" class="-ml-1 mr-3 h-5 w-5" src="/images/mark-github-16.svg"/>
-                    <span>GitHub</span>
+                <a :href="project.url" target="_blank" rel="noopener,nofollow" class="button gh"
+                data-tippy-content="View on GitHub">
+                    <img alt="GitHub Logo" class=" h-5 w-5" src="/images/mark-github-16.svg"/>
                 </a>
 
-                <a :href="project.homepageUrl" v-if="project.homepageUrl !== null" target="_blank" rel="noopener,nofollow"
-                   class="button hp">
-                    <img alt="Link Icon" class="-ml-1 mr-3 h-5 w-5" src="/images/link-16.svg"/>
-                    <span>Home Page</span>
+                <a :href="project.homepageUrl" v-if="project.homepageUrl !== null" target="_blank"
+                   rel="noopener,nofollow"
+                   class="button hp" data-tippy-content="View Home Page">
+                    <img alt="Link Icon" class="h-5 w-5" src="/images/link-16.svg"/>
                 </a>
+
+                <p class="flex items-center" v-if="project.forks.totalCount > 0">
+                    <img alt="Fork Icon" class="-ml-1 mr-3 h-5 w-5" src="/images/repo-forked-16.svg"/>
+                    <span>{{ project.forks.totalCount }}</span>
+                </p>
+                <p class="flex items-center" v-if="project.stargazerCount > 0">
+                    <img alt="Star Icon" class="-ml-1 mr-3 h-5 w-5" src="/images/star-fill-24.svg"/>
+                    <span>{{ project.stargazerCount }}</span>
+                </p>
             </div>
-        </div>
-        <div class="border-t border-black px-4 py-2 flex items-center justify-between">
-            <p class="flex items-center">
-                <img alt="Fork Icon" class="-ml-1 mr-3 h-5 w-5" src="/images/repo-forked-16.svg"/>
-                <span>{{ project.forks.totalCount }}</span>
-            </p>
-            <p class="flex items-center">
-                <img alt="Star Icon" class="-ml-1 mr-3 h-5 w-5" src="/images/star-fill-24.svg"/>
-                <span>{{ project.stargazerCount }}</span>
-            </p>
-            <p class="flex items-center">
-                <img alt="Pull Request Icon" class="-ml-1 mr-3 h-5 w-5" src="/images/git-pull-request-24.svg"/>
-                <span>{{ project.pullRequests.totalCount }}</span>
-            </p>
-            <p class="flex items-center">
-                <img alt="Issue Icon" class="-ml-1 mr-3 h-5 w-5" src="/images/issue-opened-24.svg"/>
-                <span>{{ project.issues.totalCount }}</span>
-            </p>
-            <p class="flex items-center">
-                <img alt="Tag Icon" class="-ml-1 mr-3 h-5 w-5" src="/images/tag-24.svg"/>
-                <span>{{ project.releases.totalCount }}</span>
-            </p>
         </div>
     </div>
 </template>
 
 <script>
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
+
 export default {
     name: "Project",
 
@@ -57,6 +47,16 @@ export default {
     },
 
     components: {},
+
+    created() {
+        this.$nextTick(() => {
+            tippy('[data-tippy-content]', {
+                arrow: true,
+                delay: [200, 300],
+                inertia: true,
+            });
+        });
+    },
 
     data() {
         return {
@@ -70,11 +70,11 @@ export default {
 
 <style scoped>
 .card {
-    @apply border border-black rounded-md shadow-md bg-zinc-900;
+    @apply border border-zinc-600 rounded-md shadow-md bg-zinc-800;
 }
 
 .no-desc {
-    @apply italic text-zinc-600;
+    @apply italic text-zinc-200;
 }
 
 .button {
@@ -83,12 +83,12 @@ export default {
 }
 
 .gh {
-    @apply bg-gradient-to-b from-[#444] to-[#333] hover:from-[#333] hover:to-[#222];
+    @apply bg-gradient-to-b from-[#666] to-[#555] hover:from-[#777] hover:to-[#666];
     @apply focus:outline-none focus:ring-zinc-500;
 }
 
 .hp {
-    @apply bg-gradient-to-b from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800;
-    @apply focus:outline-none focus:ring-blue-500;
+    @apply bg-gradient-to-b from-ukbb-500 to-ukbb-600 hover:from-ukbb-600 hover:to-ukbb-700;
+    @apply focus:outline-none focus:ring-ukbb-500;
 }
 </style>
