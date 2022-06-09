@@ -18,10 +18,12 @@ mix.js('resources/js/app.js', 'public/js').vue()
         require('autoprefixer')
     ])
     .webpackConfig(require('./webpack.config'))
-    .sourceMaps(true);
+    .sourceMaps(false);
 
 if (mix.inProduction()) {
-    mix.version();
+    mix
+        .minify('public/js/app.js')
+        .version();
 } else {
     mix.disableSuccessNotifications();
 }

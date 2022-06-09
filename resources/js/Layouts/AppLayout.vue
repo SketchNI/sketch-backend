@@ -1,15 +1,15 @@
 <template>
     <div class="">
         <x-head :title="title"/>
-        <div class="bg-ukbb-500 pb-6">
+        <div class="bg-ukbb-500">
             <Disclosure as="nav" v-slot="{ open }">
                 <div class="max-w-7xl pt-8 mx-auto sm:px-6 lg:px-8">
-                    <div class="mx-4 md:mx-0 h-32 w-32 border-4 rounded-lg border-ukbb-700">
+                    <div class="inline-block mx-4 md:mx-0 border-4 rounded-lg border-ukbb-700">
                         <img :src="$page.props.global.assets.favicon['chrome-192']"
                              alt="SketchNI Chibi-style Avatar by Pandreem."
-                             class="rounded-md bg-white p-[4px] bg-opacity-60"/>
+                             class="rounded-md bg-white aspect-square w-32 p-[4px] bg-opacity-60"/>
                     </div>
-                    <div class="mt-8 border-t border-b border-ukbb-700">
+                    <div class="mt-8 px-4 border-t border-b border-ukbb-700 bg-ukbb-700">
                         <div class="flex py-2 items-center justify-between px-4 sm:px-0">
                             <main-nav/>
                             <div class="-mr-2 flex md:hidden">
@@ -22,7 +22,9 @@
                         </div>
                     </div>
                 </div>
-                <mobile-nav/>
+                <div class="bg-ukbb-700">
+                    <mobile-nav/>
+                </div>
             </Disclosure>
         </div>
 

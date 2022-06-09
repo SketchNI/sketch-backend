@@ -2,8 +2,6 @@ require('./bootstrap');
 
 import { createApp, h } from 'vue';
 import { createInertiaApp, Head, Link } from '@inertiajs/inertia-vue3';
-import { InertiaProgress } from '@inertiajs/progress';
-import route from 'ziggy-js';
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
 createInertiaApp({
@@ -18,5 +16,3 @@ createInertiaApp({
             .mount(el);
     },
 });
-
-InertiaProgress.init({ color: '#3399ff' });

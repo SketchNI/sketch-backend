@@ -75,7 +75,7 @@ export default defineComponent({
 
 <style scoped>
 .active, .m-active {
-    @apply bg-ukbb-700 text-white;
+    @apply bg-zinc-700 bg-opacity-70 text-white;
 }
 
 .inactive, .m-inactive {

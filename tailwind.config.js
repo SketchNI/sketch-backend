@@ -8,16 +8,13 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
+        './public/vendor/**/*.vue',
+        './public/vendor/**/*.blade.php',
+        './public/vendor/**/*.php'
     ],
 
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Work Sans', ...defaultTheme.fontFamily.sans],
-                mono: ['Source Code Pro', ...defaultTheme.fontFamily.sans],
-                flow: ['Flow'],
-                serif: ['Source Serif Pro', ...defaultTheme.fontFamily.serif]
-            },
             colors: {
                 zinc: {
                     850: '#222',
