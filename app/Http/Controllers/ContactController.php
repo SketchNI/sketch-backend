@@ -30,7 +30,7 @@ class ContactController extends Controller
      */
     public function contact(ContactRequest $request): RedirectResponse
     {
-        Mail::to('sketch@sketchni.uk')->queue(new ContactMail($request->all()));
+        Mail::to(config('mail.from.address'))->queue(new ContactMail($request->all()));
         Mail::to($request->get('email'))->queue(new ContactMail($request->all(), "A copy of your message send on SketchNI.UK"));
 
         return redirect()->to(route('contact'));
