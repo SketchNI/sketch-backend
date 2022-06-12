@@ -22,10 +22,6 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(DuskServiceProvider::class);
         }
 
-        if ($this->app->environment('production')) {
-            $this->app->register(InspectorServiceProvider::class);
-        }
-
         Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
     }
 

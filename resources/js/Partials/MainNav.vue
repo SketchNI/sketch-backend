@@ -20,11 +20,15 @@
                     :class="route().current('contact') ? 'active' : 'inactive'"
                     :aria-current="route().current('contact') ? 'page' : undefined">Contact
             </x-link>
+            <x-link href="/login" class="inactive" v-if="$page.props.user === null && $page.props.global.environment !== 'production'">
+                Sign In
+            </x-link>
         </div>
     </div>
     <div class="hidden md:block">
         <div class="ml-4 flex items-center md:ml-6" v-if="$page.props.user !== null">
-            <a href="/horizon" class="inactive m-link`">Horizon</a>
+            <a href="/horizon" class="inactive m-link">Horizon</a>
+            <a href="/nova" class="inactive m-link">Nova</a>
             <a :href="route('profile.show')"
                class="inactive m-link`">Settings</a>
             <x-link :href="route('api-tokens.index')"

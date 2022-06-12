@@ -21,6 +21,6 @@ class Basic extends Policy
             ->addDirective(Directive::SCRIPT, [Keyword::SELF, Keyword::UNSAFE_INLINE, Keyword::UNSAFE_EVAL])
             ->addDirective(Directive::STYLE, [Keyword::SELF, Keyword::UNSAFE_INLINE, 'fonts.googleapis.com', 'fonts.gstatic.com'])
             ->addDirective(Directive::FONT, [Keyword::SELF, 'fonts.googleapis.com', 'fonts.gstatic.com'])
-            ->addNonceForDirective(Directive::SCRIPT);
+            ;//->addNonceForDirective(Directive::SCRIPT);
     }
 }
