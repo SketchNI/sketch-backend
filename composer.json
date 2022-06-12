@@ -10,6 +10,7 @@
         "fruitcake/laravel-cors": "^v2.2.0",
         "guzzlehttp/guzzle": "^7.4.2",
         "inertiajs/inertia-laravel": "^v0.5.4",
+        "inspector-apm/inspector-laravel": "^4.7",
         "laravel/dusk": "^6.23",
         "laravel/framework": "^9.9",
         "laravel/horizon": "^v5.9.6",

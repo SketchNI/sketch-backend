@@ -11,14 +11,19 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#9f00a7">
     <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="SketchNI Personal Website" />
+    <meta name="description" content="SketchNI Personal Website"/>
     <link nonce="{{ csp_nonce() }}" rel="preconnect" as="image" href="/images/sketchni.png">
     <link nonce="{{ csp_nonce() }}" rel="stylesheet" href="{{ mix('css/app.css') }}">
     @routes(null, csp_nonce())
     @inertiaHead
-    <script nonce="{{ csp_nonce() }}" src="{{ mix('js/app.min.js') }}" defer></script>
+    @env('production')
+        <script nonce="{{ csp_nonce() }}" src="{{ mix('js/app.min.js') }}" defer></script>
+    @endenv
+    @env(['local', 'testing'])
+        <script nonce="{{ csp_nonce() }}" src="{{ mix('js/app.js') }}" defer></script>
+    @endenv
 </head>
 <body class="font-sans antialiased h-full">
-    @inertia
+@inertia
 </body>
 </html>

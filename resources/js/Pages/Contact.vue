@@ -67,11 +67,21 @@
                     </a>
                 </div>
 
-                <div class="flex items-center space-x-2 hover:no-underline py-4 px-6 rounded-md">
-                    <img src="/images/discord.png" class="w-16" alt="Discord Logo">
-                    <div>
-                        <p class="text-lg lg:text-xl font-bold text-white">Sketch</p>
-                        <p class="text-sm lg:text-base text-zinc-300">Sketch#1991</p>
+                <div class="flex items-center">
+                    <div class="flex w-1/2 items-center space-x-2 py-4 px-6">
+                        <img src="/images/discord.png" class="w-16" alt="Discord Logo">
+                        <div>
+                            <p class="text-lg lg:text-xl font-bold text-white">Sketch</p>
+                            <p class="text-sm lg:text-base text-zinc-300">Sketch#1991</p>
+                        </div>
+                    </div>
+
+                    <div class="flex w-1/2 items-center space-x-2 py-4 px-6">
+                        <MailIcon class="w-16 h-16 text-zinc-400"/>
+                        <div>
+                            <p class="text-lg lg:text-xl font-bold text-white">Email</p>
+                            <p class="text-sm lg:text-base text-zinc-300 select-none" v-text="email"/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,6 +115,7 @@ export default defineComponent({
 
     data() {
         return {
+            email: 'ku.inhcteks@hcteks',
             form: this.$inertia.form({
                 _method: 'POST',
                 name: '',
@@ -115,6 +126,10 @@ export default defineComponent({
         }
     },
 
+    created() {
+        this.reverseString()
+    },
+
     methods: {
         sendMailForm() {
             this.form.post(route('contact'), {
@@ -122,6 +137,10 @@ export default defineComponent({
                     this.form.reset();
                 }
             });
+        },
+
+        reverseString() {
+            this.email = this.email.split("").reverse().join("");
         }
     },
 })

@@ -15,7 +15,7 @@ class Basic extends Policy
             ->addDirective(Directive::CONNECT, Keyword::SELF)
             ->addDirective(Directive::DEFAULT, Keyword::SELF)
             ->addDirective(Directive::FORM_ACTION, Keyword::SELF)
-            ->addDirective(Directive::IMG, Keyword::SELF)
+            ->addDirective(Directive::IMG, [Keyword::SELF, 'data:', 'https:'])
             ->addDirective(Directive::MEDIA, Keyword::SELF)
             ->addDirective(Directive::OBJECT, Keyword::NONE)
             ->addDirective(Directive::SCRIPT, [Keyword::SELF, Keyword::UNSAFE_INLINE, Keyword::UNSAFE_EVAL])
