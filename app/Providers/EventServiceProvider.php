@@ -2,10 +2,20 @@
 
 namespace App\Providers;
 
+use App\Models\Author;
+use App\Models\Book;
+use App\Models\Series;
+use App\Models\Book\{
+    BookGenre};
+use App\Models\Platform;
+use App\Observers\{
+    AuthorObserver,
+    BookObserver,
+    SeriesObserver,
+    PlatformObserver};
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -20,6 +30,14 @@ class EventServiceProvider extends ServiceProvider
         ],
     ];
 
+    protected $observers = [
+        Book::class => [BookObserver::class],
+        Series::class => [SeriesObserver::class],
+        Author::class => [AuthorObserver::class],
+        //BookGenre::class => [BookGenreObserver::class],
+        Platform::class => [PlatformObserver::class]
+    ];
+
     /**
      * Register any events for your application.
      *
@@ -29,4 +47,5 @@ class EventServiceProvider extends ServiceProvider
     {
         //
     }
+
 }

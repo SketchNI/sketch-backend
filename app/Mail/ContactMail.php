@@ -12,7 +12,7 @@ class ContactMail extends Mailable implements ShouldQueue
     use Queueable, SerializesModels;
 
     public object $data;
-    public string $subject;
+    public $subject;
 
     /**
      * Create a new message instance.
